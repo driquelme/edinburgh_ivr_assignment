@@ -23,51 +23,22 @@ class Kinematics:
         return np.array([
             [
                 2 * cos(joint_state.theta1) * cos(joint_state.theta2) * sin(joint_state.theta4) +
-                3* cos(joint_state.theta1) * cos(joint_state.theta3) * sin(joint_state.theta2) +
-                cos(joint_state.theta4) * (
-                        2* cos(joint_state.theta1) * cos(joint_state.theta3) * sin(joint_state.theta2) -
-                        2* sin(joint_state.theta1) * sin(joint_state.theta3)) -
-                3* sin(joint_state.theta1) * sin(joint_state.theta3),
-                2* cos(joint_state.theta2) * cos(joint_state.theta3) * cos(joint_state.theta4) * sin(
-                    joint_state.theta1) + 3* cos(joint_state.theta2) * cos(joint_state.theta3) * sin(
-                    joint_state.theta1) - 2* sin(joint_state.theta1) * sin(joint_state.theta2) * sin(
-                    joint_state.theta4),
-                3* cos(joint_state.theta1) * cos(joint_state.theta3) + cos(joint_state.theta4) * (
-                        2* cos(joint_state.theta1) * cos(joint_state.theta3) - 2* sin(joint_state.theta1) * sin(
-                    joint_state.theta2) * sin(joint_state.theta3)) - 3* sin(joint_state.theta1) * sin(
-                    joint_state.theta2) * sin(joint_state.theta3),
-                2* cos(joint_state.theta2) * cos(joint_state.theta4) * sin(joint_state.theta1) - sin(
-                    joint_state.theta4) * (
-                        2* cos(joint_state.theta1) * sin(joint_state.theta3) + 2* cos(joint_state.theta3) * sin(
-                    joint_state.theta1) * sin(joint_state.theta2)),
+                3 * cos(joint_state.theta1) * cos(joint_state.theta3) * sin(joint_state.theta2) + cos(joint_state.theta4) * (2 * cos(joint_state.theta1) * cos(joint_state.theta3) * sin(joint_state.theta2) -2 * sin(joint_state.theta1) * sin(joint_state.theta3)) -
+                3 * sin(joint_state.theta1) * sin(joint_state.theta3),
+                2 * cos(joint_state.theta2) * cos(joint_state.theta3) * cos(joint_state.theta4) * sin(joint_state.theta1) + 3 * cos(joint_state.theta2) * cos(joint_state.theta3) * sin(joint_state.theta1) - 2 * sin(joint_state.theta1) * sin(joint_state.theta2) * sin(joint_state.theta4),
+                3 * cos(joint_state.theta1) * cos(joint_state.theta3) + cos(joint_state.theta4) * (2 * cos(joint_state.theta1) * cos(joint_state.theta3) - 2 * sin(joint_state.theta1) * sin(joint_state.theta2) * sin(joint_state.theta3)) - 3 * sin(joint_state.theta1) * sin(joint_state.theta2) * sin(joint_state.theta3),
+                2 * cos(joint_state.theta2) * cos(joint_state.theta4) * sin(joint_state.theta1) - sin(joint_state.theta4) * (2 * cos(joint_state.theta1) * sin(joint_state.theta3) + 2 * cos(joint_state.theta3) * sin(joint_state.theta1) * sin(joint_state.theta2)),
             ],
             [
-                3* cos(joint_state.theta1) * sin(joint_state.theta3) + 2* cos(joint_state.theta2) * sin(
-                    joint_state.theta1) * sin(joint_state.theta4) + 3* cos(joint_state.theta3) * sin(
-                    joint_state.theta1) * sin(joint_state.theta2) + cos(joint_state.theta4) * (
-                        2* cos(joint_state.theta1) * sin(joint_state.theta3) + 2* cos(joint_state.theta3) * sin(
-                    joint_state.theta1) * sin(joint_state.theta2)),
-                -2* cos(joint_state.theta1) * cos(joint_state.theta2) * cos(joint_state.theta3) * cos(
-                    joint_state.theta4) - 3* cos(joint_state.theta1) * cos(joint_state.theta2) * cos(
-                    joint_state.theta3) + 2* cos(joint_state.theta1) * sin(joint_state.theta2) * sin(
-                    joint_state.theta4),
-                3* cos(joint_state.theta1) * sin(joint_state.theta2) * sin(joint_state.theta3) + 3* cos(
-                    joint_state.theta3) * sin(joint_state.theta1) + cos(joint_state.theta4) * (
-                        2* cos(joint_state.theta1) * sin(joint_state.theta2) * sin(joint_state.theta3) + 2* cos(
-                    joint_state.theta3) * sin(joint_state.theta1)),
-                -2* cos(joint_state.theta1) * cos(joint_state.theta2) * cos(joint_state.theta4) - sin(
-                    joint_state.theta4) * (
-                        -2* cos(joint_state.theta1) * cos(joint_state.theta3) * sin(joint_state.theta2) + 2* sin(
-                    joint_state.theta1) * sin(joint_state.theta3)),
+                3 * cos(joint_state.theta1) * sin(joint_state.theta3) + 2 * cos(joint_state.theta2) * sin(joint_state.theta1) * sin(joint_state.theta4) + 3 * cos(joint_state.theta3) * sin(joint_state.theta1) * sin(joint_state.theta2) + cos(joint_state.theta4) * (2 * cos(joint_state.theta1) * sin(joint_state.theta3) + 2 * cos(joint_state.theta3) * sin(joint_state.theta1) * sin(joint_state.theta2)),
+                -2 * cos(joint_state.theta1) * cos(joint_state.theta2) * cos(joint_state.theta3) * cos(joint_state.theta4) - 3 * cos(joint_state.theta1) * cos(joint_state.theta2) * cos(joint_state.theta3) + 2 * cos(joint_state.theta1) * sin(joint_state.theta2) * sin(joint_state.theta4),
+                3 * cos(joint_state.theta1) * sin(joint_state.theta2) * sin(joint_state.theta3) + 3 * cos(joint_state.theta3) * sin(joint_state.theta1) + cos(joint_state.theta4) * (2 * cos(joint_state.theta1) * sin(joint_state.theta2) * sin(joint_state.theta3) + 2 * cos(joint_state.theta3) * sin(joint_state.theta1)),
+                -2 * cos(joint_state.theta1) * cos(joint_state.theta2) * cos(joint_state.theta4) - sin(joint_state.theta4) * (-2 * cos(joint_state.theta1) * cos(joint_state.theta3) * sin(joint_state.theta2) + 2 * sin(joint_state.theta1) * sin(joint_state.theta3)),
             ],
             [
                 0,
-                -2* cos(joint_state.theta2) * sin(joint_state.theta4) - 2* cos(joint_state.theta3) * cos(
-                    joint_state.theta4) * sin(joint_state.theta2) - 3* cos(joint_state.theta3) * sin(
-                    joint_state.theta2),
-                -2* cos(joint_state.theta2) * cos(joint_state.theta4) * sin(joint_state.theta3) - 3* cos(
-                    joint_state.theta2) * sin(joint_state.theta3),
-                -2* cos(joint_state.theta2) * cos(joint_state.theta3) * sin(joint_state.theta4) - 2* cos(
-                    joint_state.theta4) * sin(joint_state.theta2),
+                -2 * cos(joint_state.theta2) * sin(joint_state.theta4) - 2 * cos(joint_state.theta3) * cos(joint_state.theta4) * sin(joint_state.theta2) - 3 * cos(joint_state.theta3) * sin(joint_state.theta2),
+                -2 * cos(joint_state.theta2) * cos(joint_state.theta4) * sin(joint_state.theta3) - 3 * cos(joint_state.theta2) * sin(joint_state.theta3),
+                -2 * cos(joint_state.theta2) * cos(joint_state.theta3) * sin(joint_state.theta4) - 2 * cos(joint_state.theta4) * sin(joint_state.theta2),
             ],
         ])
